@@ -1,0 +1,41 @@
+/*
+  —пециально дл€ светлой темы при наличии класса.
+  «десь окажутс€ стили, которые нужно переопределить принудительно,
+  переключа€ тему
+*/
+
+:root.theme-light {
+  /* сохраните этот селектор в приведЄнном виде.
+    “ак стили написанные ниже будут иметь больший вес,
+    чем стили в медиазапросе предпочтений пользовател€
+  */
+  --accent-color: #FF8DCB;
+  --title-color: #FFC2E6;
+  --contrast-color: #353430;
+  --main-text-color: #353430;
+  --header-bg-image: url('../images/cover-image-light.png');
+}
+
+.theme-light .page {
+  /* ¬ам также нужно будет написать р€д подобных селекторов */
+  background-color: var(--contrast-color);
+  background-image: var(--header-bg-image);
+}
+
+.theme-light .header__deco {
+  display: none;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --accent-color: #FF8DCB;
+    --title-color: #FFC2E6;
+    --contrast-color: #353430;
+    --main-text-color: #353430;
+    --header-bg-image: url('../images/cover-image-light.png');
+  }
+
+  .header__deco {
+    display: none;
+  }
+}
